@@ -25,6 +25,7 @@ public:
     Matrix& operator+=(const Matrix& matrix) ;
     Matrix& operator-=(const Matrix& matrix) ;
     Matrix& operator*=(const Matrix& matrix) ;
+    double* operator[](int i)const;
 
 };
 

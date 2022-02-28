@@ -99,6 +99,10 @@ Matrix Matrix::operator+(const Matrix &matrix) const {
 
 }
 
+double *Matrix::operator[](int i) const {
+    return tab[i];
+}
+
 const char *NoMatchDimentionExection::what() const throw() {
     return "Dimention dont match to operation which you want executed";
 }
