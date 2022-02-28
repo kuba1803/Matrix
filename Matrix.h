@@ -7,6 +7,7 @@
 
 
 #include <utility>
+#include <exception>
 
 class Matrix {
 private:
@@ -18,7 +19,18 @@ public:
     Matrix(Matrix && matrix);
     virtual ~Matrix();
     Matrix& operator=(const Matrix& matrix);
+    Matrix operator+(const Matrix& matrix) const;
+    Matrix operator-(const Matrix& matrix) const;
+    Matrix operator*(const Matrix& matrix) const;
+    Matrix& operator+=(const Matrix& matrix) ;
+    Matrix& operator-=(const Matrix& matrix) ;
+    Matrix& operator*=(const Matrix& matrix) ;
 
+};
+
+
+struct NoMatchDimentionExection: public std::exception{
+    const char * what () const throw ();
 };
 
 
